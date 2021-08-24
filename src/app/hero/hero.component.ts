@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent implements OnInit {
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm',
+  };
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -44,4 +50,10 @@ export class HeroComponent implements OnInit {
       name: 'Mr nobody',
     },
   ];
+
+  dashboardClick() {
+    console.log(`test `);
+
+    // document.getElementById('one')?.classList.add('hidden');
+  }
 }

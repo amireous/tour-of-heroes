@@ -1,17 +1,26 @@
-<h1>Tour of Heroes</h1>
-<button id="dashboard-btn">Dashboard</button>
-<button id="heroes-btn">Heroes</button>
+<!-- <body>
+  <div class="container">
+    <h1>Tour of Heroes</h1>
+    <button id="dashboard-btn">Dashboard</button>
+    <button id="heroes-btn">Heroes</button> -->
 
-<div class="dashboard">
-  <!-- <h2>wind strom details !</h2> -->
-  <div class="top-heroes">
-    <h2>Top Heroes</h2>
-    <div class="top-heroes-items">
-      <div>{{ heroesList[0].name }}</div>
-      <div>{{ heroesList[1].name }}</div>
-      <div>{{ heroesList[2].name }}</div>
-      <div>{{ heroesList[3].name }}</div>
-      <!-- <div *ngFor="let hero of heroesList">{{ hero.id }}- {{ hero.name }}</div> -->
+<!-- <div class="dashboard">
+
+      <div class="top-heroes">
+        <h2>Top Heroes</h2>
+        <div class="top-heroes-items">
+          <div (click)="dashboardClick()" *ngFor="let hero of heroesList">
+            {{ hero.id }}- {{ hero.name }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</body> -->
+
+<h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
 </div>

@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10rem;
+}
+
+.container {
+  //   background-color: rebeccapurple;
+}
+
+.top-heroes-items {
+  display: flex;
+  & > div {
+    background-color: royalblue;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.hidden {
+  display: none;
+}

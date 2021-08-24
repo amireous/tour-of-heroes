@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 10rem;
+}
+
+.top-heroes-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top-heroes-items > div {
+  background-color: royalblue;
+  padding: 1rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=hero.component.css.map */
