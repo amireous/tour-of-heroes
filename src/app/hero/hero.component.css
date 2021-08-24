@@ -1,6 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: system-ui, sans-serif;
-  width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,24 +21,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 10rem;
-  background-color: #f6f6f6;
 }
 
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 button {
@@ -52,18 +56,28 @@ button:active {
 }
 
 .top-heroes-items {
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .top-heroes-items > div {
   background-color: royalblue;
   padding: 1rem;
-  margin-left: 0.5rem;
   border-radius: 5px;
   font-weight: bold;
   color: white;
+}
+
+h2 {
+  margin: 1rem;
 }
 
 .hidden {
@@ -91,9 +105,35 @@ button:active {
 .selected-item {
   margin-top: 2rem;
   background-color: #f6f6f6;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 5px;
-  -webkit-box-shadow: 3px 3px 5px rgba(78, 78, 78, 0.37), -3px -3px 5px #fff;
-          box-shadow: 3px 3px 5px rgba(78, 78, 78, 0.37), -3px -3px 5px #fff;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    height: 100%;
+  }
+  .container {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .dashboard {
+    width: 100%;
+  }
+  .top-heroes-items {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .top-item {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .selected-item {
+    margin-bottom: 7rem;
+  }
 }
 /*# sourceMappingURL=hero.component.css.map */

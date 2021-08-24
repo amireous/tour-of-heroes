@@ -31,13 +31,13 @@ export class HeroComponent implements OnInit {
 
   dashboardClick() {
     document.querySelector('.heroes-section')?.classList.add('hidden');
-    document.querySelector('.top-heroes-items')?.classList.remove('hidden');
+    document.querySelector('.top-heroes')?.classList.remove('hidden');
     document.querySelector('.selected-item')?.classList.add('hidden');
   }
 
   displayHeroes() {
     document.querySelector('.heroes-section')?.classList.toggle('hidden');
-    document.querySelector('.top-heroes-items')?.classList.add('hidden');
+    document.querySelector('.top-heroes')?.classList.add('hidden');
     document.querySelector('.selected-item')?.classList.add('hidden');
   }
 

@@ -1,26 +1,32 @@
+@import "variables";
+
+@mixin flex($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: system-ui, sans-serif;
-  width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
   flex-direction: column;
-  margin-top: 10rem;
-  background-color: #f6f6f6;
 }
 
 .container {
-  //   background-color: rebeccapurple;
-  display: flex;
+  @include flex();
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
+  margin: $little-margin;
+  padding: $little-padding $base_margin;
   font-weight: bold;
   background: royalblue;
   border: none;
@@ -35,15 +41,19 @@ button {
 }
 
 .top-heroes-items {
-  display: flex;
+  width: 500px;
+  @include flex(space-between);
   & > div {
     background-color: royalblue;
-    padding: 1rem;
-    margin-left: 0.5rem;
+    padding: $base_padding;
     border-radius: 5px;
     font-weight: bold;
     color: white;
   }
+}
+
+h2 {
+  margin: $base_margin;
 }
 
 .hidden {
@@ -53,22 +63,46 @@ button {
 .heroes-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: $base_margin;
 
   .item {
     background: royalblue;
-    padding: 0.75rem;
+    padding: $little-padding + 0.25;
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    margin-bottom: 0.75rem;
+    margin-bottom: $little-margin + 0.25;
     cursor: pointer;
   }
 }
 .selected-item {
-  margin-top: 2rem;
+  margin-top: $base_margin + 1;
   background-color: #f6f6f6;
-  padding: 1rem;
+  padding: $base_padding + 0.5;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px rgba(78, 78, 78, 0.37), -3px -3px 5px #fff;
+}
+@media screen and (max-width: 768px) {
+  body {
+    height: 100%;
+  }
+  .container {
+    width: 100%;
+    padding: $little-padding;
+  }
+  .dashboard {
+    width: 100%;
+  }
+  .top-heroes-items {
+    width: 100%;
+    flex-direction: column;
+  }
+  .top-item {
+    width: 100%;
+    padding: $little-padding;
+    margin-bottom: $base_margin;
+  }
+
+  .selected-item {
+    margin-bottom: $base_margin * 7;
+  }
 }
