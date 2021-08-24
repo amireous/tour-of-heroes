@@ -1,26 +1,58 @@
-<!-- <body>
+<body>
   <div class="container">
     <h1>Tour of Heroes</h1>
-    <button id="dashboard-btn">Dashboard</button>
-    <button id="heroes-btn">Heroes</button> -->
-
-<!-- <div class="dashboard">
-
+    <div class="btns">
+      <button class="dashboard-btn" (click)="dashboardClick()">
+        Dashboard
+      </button>
+      <button class="heroes-btn" (click)="displayHeroes()">Heroes</button>
+    </div>
+    <div class="dashboard">
       <div class="top-heroes">
         <h2>Top Heroes</h2>
         <div class="top-heroes-items">
-          <div (click)="dashboardClick()" *ngFor="let hero of heroesList">
-            {{ hero.id }}- {{ hero.name }}
+          <div class="top--item" (click)="viewItemDetail(heroesList[0])">
+            {{ heroesList[0].id }}- {{ heroesList[0].name }}
+          </div>
+          <div class="top--item" (click)="viewItemDetail(heroesList[1])">
+            {{ heroesList[1].id }}- {{ heroesList[1].name }}
+          </div>
+          <div class="top--item" (click)="viewItemDetail(heroesList[2])">
+            {{ heroesList[2].id }}- {{ heroesList[2].name }}
+          </div>
+          <div class="top--item" (click)="viewItemDetail(heroesList[3])">
+            {{ heroesList[3].id }}- {{ heroesList[3].name }}
           </div>
         </div>
       </div>
     </div>
+    <div class="heroes-section hidden">
+      <h2>My Heroes</h2>
+      <div class="heroes-list">
+        <div
+          class="item"
+          *ngFor="let hero of heroesList"
+          (click)="viewItemDetail(hero)"
+        >
+          {{ hero.id }}- {{ hero.name }}
+        </div>
+      </div>
+    </div>
   </div>
-</body> -->
-
-<h2>{{ hero.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ hero.id }}</div>
-<div>
-  <label for="name">Hero name: </label>
-  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
-</div>
+  <div class="selected-item" *ngIf="selectedHero">
+    <div class="view-details-section hidden">
+      <h2>{{ selectedHero.name }} is my hero</h2>
+      <button class="view-details" (click)="viewDetailBtn()">
+        View details
+      </button>
+    </div>
+    <div class="details">
+      <h2>{{ selectedHero.name | uppercase }} Details</h2>
+      <div>id: {{ selectedHero.id }}</div>
+      <div>
+        <span>Hero name: </span>
+        <input [(ngModel)]="selectedHero.name" placeholder="enter Hero name" />
+      </div>
+    </div>
+  </div>
+</body>
