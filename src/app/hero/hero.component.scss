@@ -28,9 +28,9 @@ button {
   margin: $little-margin;
   padding: $little-padding $base_margin;
   font-weight: bold;
-  background: royalblue;
+  background: $primary-blue;
   border: none;
-  color: white;
+  color: $white;
   border-radius: 5px;
   font-family: system-ui, sans-serif;
   cursor: pointer;
@@ -44,11 +44,11 @@ button {
   width: 500px;
   @include flex(space-between);
   & > div {
-    background-color: royalblue;
+    background-color: $primary-blue;
     padding: $base_padding;
     border-radius: 5px;
     font-weight: bold;
-    color: white;
+    color: $white;
   }
 }
 
@@ -66,10 +66,10 @@ h2 {
   grid-gap: $base_margin;
 
   .item {
-    background: royalblue;
+    background: $primary-blue;
     padding: $little-padding + 0.25;
     border-radius: 5px;
-    color: white;
+    color: $white;
     font-weight: bold;
     margin-bottom: $little-margin + 0.25;
     cursor: pointer;
@@ -77,7 +77,7 @@ h2 {
 }
 .selected-item {
   margin-top: $base_margin + 1;
-  background-color: #f6f6f6;
+  background-color: $primary-white;
   padding: $base_padding + 0.5;
   border-radius: 5px;
 }
